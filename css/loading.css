@@ -1,0 +1,26 @@
+.loading-container {
+  text-align: center;
+  position: relative;
+}
+
+.airplane {
+  font-size: 40px; 
+  color: #3857f5; 
+  position: absolute;
+  animation: fly 3s linear forwards; 
+  padding-bottom: 20px;
+}
+
+@keyframes fly {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%); 
+  }
+}
+
+p{
+  padding-top: 50px;
+}
+
