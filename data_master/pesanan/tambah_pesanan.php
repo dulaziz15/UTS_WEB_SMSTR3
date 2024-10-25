@@ -11,27 +11,41 @@ include('../componen/header.php');
             echo "<span>" . $_SESSION['error'] . "</span>";
         }
         ?>
-        <form action="../../routes/route.php?action=addPesanan" method="post">
-            User
-            <select name="user" id="user">
-                <option value="kosong">Pilih User</option>
-            </select><br>
-            Destinasi
-            <select name="destinasi" id="destinasi" onChange='getTransportasi()'>
-                <option value="kosong">Pilih Destinasi</option>
-            </select><br>
-            Transportasi
-            <select name="transportasi" id="transportasi">
+        <form action="../../routes/route.php?action=addPesanan" method="post" class="form">
+            <div class="form-container">
+                <div class="form-input input-select">
+                    <label for="user">User</label>
+                    <select name="user" id="user">
+                        <option value="kosong">Pilih User</option>
+                    </select>
+                </div>
+                <div class="form-input">
+                    <label for="destinasi">Destinasi</label>
+                    <select name="destinasi" id="destinasi" onChange='getTransportasi()'>
+                        <option value="kosong">Pilih Destinasi</option>
+                    </select>
+                </div>
+                <div class="form-input input-select">
+                    <label for="transportasi">Transportasi</label>
+                    <select name="transportasi" id="transportasi">
 
-            </select><br>
-            Quantity
-            <input type="number" name="quantity"><br>
-            Status
-            <select name="status" id="status">
-                <option value="1">Booking</option>
-                <option value="2">Perjalanan</option>
-            </select><br>
-            <input type="submit" value="Pesan">
+                    </select>
+                </div>
+                <div class="form-input">
+                    <label for="quantity">Quantity</label>
+                    <input type="number" name="quantity" id="quantity">
+                </div>
+                <div class="form-input input-select">
+                    <label for="status">Status</label>
+                    <select name="status" id="status">
+                    <option value="1">Booking</option>
+                    <option value="2">Perjalanan</option>
+                </select>
+                </div>
+            </div>
+            <div class="form-input-submit">
+                <input type="submit" value="Tambah" name="submit" id="submit">
+            </div>
         </form>
     </div>
 </main>
@@ -58,7 +72,7 @@ include('../componen/header.php');
     });
     $.ajax({
         type: 'GET',
-        url: '/PRAKTIKUM%20DESAIN%20DASAR%20PEMROGRAMAN%20WEB/UTS/routes/route.php?action=getDestinasiAll', // Ensure this path is correct
+        url: '/PRAKTIKUM%20DESAIN%20DASAR%20PEMROGRAMAN%20WEB/UTS/routes/route.php?action=getDestinasiAll',
         success: function(data) {
             if (Array.isArray(data)) {
                 let tableContent = '';
@@ -87,7 +101,7 @@ include('../componen/header.php');
         }
         $.ajax({
             type: 'GET',
-            url: '/PRAKTIKUM%20DESAIN%20DASAR%20PEMROGRAMAN%20WEB/UTS/routes/route.php?action=getTransportasiByDestinasi&id=' + destinasi, // Ensure this path is correct
+            url: '/PRAKTIKUM%20DESAIN%20DASAR%20PEMROGRAMAN%20WEB/UTS/routes/route.php?action=getTransportasiByDestinasi&id=' + destinasi,
             success: function(data) {
                 $('#transportasi').empty();
 

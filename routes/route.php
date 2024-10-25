@@ -112,4 +112,6 @@ if ($action == "user") {
     $user->user();
 } elseif ($action == "login") {
     $auth->login();
+} elseif ($action == "register") {
+    $user->register();
 }

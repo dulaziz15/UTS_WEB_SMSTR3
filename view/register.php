@@ -17,30 +17,48 @@
     </div>
 <body>
     <div class="login-container" style="display: none;">
-        <h2>Login</h2>
+        <h2>Register</h2>
         <?php
         session_start();
         if (isset($_SESSION["error"])) {
             echo "<span>" . $_SESSION["error"] . "</span>";
-        } elseif (isset($_SESSION["sukses"])) {
-            echo "<span class='sukses'>" . $_SESSION["sukses"] . "</span>";
         }
         ?>
         <!-- <span>Email atau Password Salah !</span> -->
-        <form action="../routes/route.php?action=login" method="post">
+        <form action="../routes/route.php?action=register" method="post">
             <div class="input-group">
                 <label for="">Email</label>
                 <input type="email" placeholder="Enter your Email" name="email" required>
             </div>
             <div class="input-group">
-                <label for="">Password</label>
-                <input type="password" placeholder="Enter your Password" name="password" required>
+                <label for="">Nama</label>
+                <input type="text" placeholder="Enter your name" name="nama" required>
             </div>
             <div class="input-group">
-                <input type="submit" value="Login" name="submit" id="submit">
+                <label for="">Username</label>
+                <input type="text" placeholder="Enter your username" name="username" required>
+            </div>
+            <div class="input-group">
+                <label for="">Alamat</label>
+                <input type="text" placeholder="Enter your Alamat" name="alamat" required>
+            </div>
+            <div class="input-group">
+                <label for="">Jenis Kelamin</label>
+                <select name="janis_kelamin" id="jenis_kelamin">
+                    <option value="laki-laki">Laki-laki</option>
+                    <option value="Perempuan">Perempuan</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="">Password</label>
+                <input type="password" placeholder="Enter your Password" name="password" required>
+                <input type="number" value="2" name="type" hidden>
+            </div>
+            <div class="input-group">
+                <input type="submit" value="Register" name="submit" id="submit">
             </div>
             <div class="input-group register">
-                <p>Apakah Anda memiliki akun ? <a href="register.php">Register</a></p>
+                <p>Sudah memiliki akun ? <a href="register.php">Login</a></p>
             </div>
         </form>
     </div>
@@ -48,7 +66,6 @@
 </body>
 <?php
 unset($_SESSION["error"]);
-unset($_SESSION["sukses"]);
 ?>
 <script>
     setTimeout(function() {

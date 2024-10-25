@@ -4,15 +4,37 @@ include('../componen/header.php');
 <main class="main-content">
     <div class="card-table">
         <h2 class="title-content">Data User</h2>
-        <form action="../../routes/route.php?action=updateuser&id=<?= $_GET['id'] ?>" method="post">
-            <input type="text" name="email" id="email">
-            <input type="text" name="password" id="password">
-            <input type="number" name="type" id="type">
-            <input type="text" name="username" id="username">
-            <input type="submit" value="Update" id="update">
+        <form action="../../routes/route.php?action=updateuser&id=<?= $_GET['id'] ?>" method="post" class="form">
+            <div class="form-container">
+                <div class="form-input">
+                    <label for="email">Email</label>
+                    <input type="text" name="email" id="email">
+                </div>
+                <div class="form-input">
+                    <label for="password">Password</label>
+                    <input type="text" name="password" id="password">
+                </div>
+                <div class="form-input">
+                    <label for="username">Username</label>
+                    <input type="text" name="username" id="username">
+                </div>
+                <div class="form-input input-select">
+                    <label for="type">Type (Role)</label>
+                    <select name="type" id="type">
+                        <option value="2">User</option>
+                        <option value="1">Admin</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-input-submit">
+                <input type="submit" value="Update" name="update" id="update">
+            </div>
         </form>
     </div>
 </main>
+<?php
+include('../componen/footer.php');
+?>
 <script>
     $.ajax({
         type: 'GET',
@@ -30,6 +52,3 @@ include('../componen/header.php');
         }
     });
 </script>
-<?php
-include('../componen/footer.php');
-?>

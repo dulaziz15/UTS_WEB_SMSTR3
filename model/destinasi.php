@@ -41,7 +41,8 @@ class Destinasi {
         $daerah = $_POST['daerah'];
         $img = $_FILES['img'];
         if(empty($img['name'])) {
-            $query = "UPDATE dbo.distinasi SET nama_destinasi = '$nama', daerah = '$daerah' WHERE destinasi_id = $id";
+            $query = "UPDATE dbo.distinasi SET nama_destinasi = '$nama', daerah = '$daerah' 
+                    WHERE destinasi_id = $id";
             // var_dump($query);
             $data = $this->koneksi->koneksi()->query($query);
             if($data == true) {
@@ -54,7 +55,8 @@ class Destinasi {
             $namaImgSementara = $_FILES['img']['tmp_name'];
             $namaImg = $_FILES['img']['name'];
             move_uploaded_file($namaImgSementara, $path.$namaImg);
-            $query = "UPDATE FROM dbo.distinasi SET nama_destinasi = '$nama', daerah = '$daerah', img = '$namaImg' WHERE destinasi_id = $id";
+            $query = "UPDATE FROM dbo.distinasi SET nama_destinasi = '$nama', 
+                        daerah = '$daerah', img = '$namaImg' WHERE destinasi_id = $id";
             $data = $this->koneksi->koneksi()->query($query);
             if($data == true) {
                 return true;

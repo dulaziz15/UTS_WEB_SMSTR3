@@ -4,20 +4,34 @@ include('../../data_master/componen/header.php');
 <main class="main-content">
     <div class="card-table">
         <h2>Tambah Transportasi</h2>
-        <form action="../../routes/route.php?action=addTransportasi" method="post">
-            Jenis
-            <input type="text" name="nama"><br>
-            Biaya
-            <input type="number" name="biaya"><br>
-            Slot
-            <input type="number" name="slot"><br>
-            Telpon
-            <input type="number" name="telp"><br>
-            Destinasi
-            <select name="destinasi" id="destinasi">
+        <form action="../../routes/route.php?action=addTransportasi" method="post" class="form">
+            <div class="form-container">
+                <div class="form-input">
+                    <label for="nama">Jenis Kendaraan</label>
+                    <input type="text" name="nama" id="nama">
+                </div>
+                <div class="form-input">
+                    <label for="biaya">Biaya</label>
+                    <input type="number" name="biaya" id="biaya">
+                </div>
+                <div class="form-input">
+                    <label for="slot">Slot</label>
+                    <input type="number" name="slot" id="slot">
+                </div>
+                <div class="form-input">
+                    <label for="telepon">No. Telepon</label>
+                    <input type="number" name="telp" id="telp">
+                </div>
+                <div class="form-input input-select">
+                    <label for="destinasi">Destinasi</label>
+                    <select name="destinasi" id="destinasi">
 
-            </select><br>
-            <input type="submit" value="Submit">
+                    </select>
+                </div>
+            </div>
+            <div class="form-input-submit">
+                <input type="submit" value="Tambah" name="Tambah" id="submit">
+            </div>
         </form>
     </div>
 </main>

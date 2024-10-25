@@ -36,7 +36,7 @@ class User
         $nama = $_POST['nama'];
         $alamat = $_POST['alamat'];
         $jenis_kelamin = $_POST['jenis_kelamin'];
-        $type = 2;
+        $type = $_POST['type'];
         $query = "INSERT INTO dbo.users (email, password, type, username) VALUES ('$email', '$password', '$type', '$username')";
         $data = $this->koneksi->koneksi()->query($query);
         if ($data = true) {

@@ -8,6 +8,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js" integrity="sha512-poSrvjfoBHxVw5Q2awEsya5daC0p00C8SKN74aVJrs7XLeZAi+3+13ahRhHm8zdAFbI2+/SUIrKYLvGBJf9H3A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/destinasiStyle.css">
+    <link rel="stylesheet" href="css/form.css">
 </head>
 
 <body>
@@ -62,30 +63,46 @@
                 <div class="container-pesanan" id="pesanan">
                     <div style="display: none;" class="form-pesanan" id="form-pesanan">
                         <h1>Form Pemesanan</h1>
-                        <a href="" onclick="backDestinasi()">Lihat Destinasi</a>
-                        <form action="routes/route.php?action=addPesananUser&id=<?= $_SESSION['login_id'] ?>" method="POST" id="pesanan-form">
-                            Quantity
-                            <input type="number" name="quantity" id=""><br>
-                            Transportasi
-                            <select name="transportasi" id="transportasi">
+                        <a href="" onclick="backDestinasi()" class="back">Lihat Destinasi</a>
+                        <form action="routes/route.php?action=addPesananUser&id=<?= $_SESSION['login_id'] ?>" method="POST" id="pesanan-form" class="form">
+                            <div class="form-container">
+                                <div class="form-input">
+                                    <label for="quantity">Quantity</label>
+                                    <input type="number" name="quantity">
+                                </div>
+                                <div class="form-input">
+                                    <label for="transportasi">Transportasi</label>
+                                    <select name="transportasi" id="transportasi">
 
-                            </select><br>
-                            <input type="submit" value="Submit">
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-input-submit">
+                                <input type="submit" value="Tambah" name="Tambah" id="submit">
+                            </div>
                         </form>
                     </div>
                 </div>
                 <div class="container-pesanan-edit" id="edit-pesanan">
                     <div style="display: none;" class="form-pesanan-update" id="form-pesanan">
                         <h1>Form Edit Pemesanan</h1>
-                        <a href="" onclick="backDestinasi()">Lihat Destinasi</a>
-                        <form method="POST" id="update-pesanan-form">
-                            Quantity
-                            <input type="number" name="quantity" id="quantity-update"><br>
-                            Transportasi
-                            <select name="transportasi" id="transportasi-update">
-                                
-                            </select><br>
-                            <input type="submit" value="Submit">
+                        <a href="" onclick="backDestinasi()" class="back">Lihat Destinasi</a>
+                        <form method="POST" id="update-pesanan-form" class="form">
+                        <div class="form-container">
+                                <div class="form-input">
+                                    <label for="quantity">Quantity</label>
+                                    <input type="number" name="quantity" id="quantity-update">
+                                </div>
+                                <div class="form-input">
+                                    <label for="transportasi">Transportasi</label>
+                                    <select name="transportasi" id="transportasi-update">
+
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-input-submit">
+                                <input type="submit" value="Tambah" name="Tambah" id="submit">
+                            </div>
                         </form>
                     </div>
                 </div>

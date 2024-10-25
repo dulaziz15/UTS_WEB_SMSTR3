@@ -31,6 +31,7 @@ include('../componen/header.php');
 <?php
 unset($_SESSION['sukses']);
 unset($_SESSION['error']);
+include('../componen/footer.php')
 ?>
 <script>
     $.ajax({
@@ -62,6 +63,3 @@ unset($_SESSION['error']);
         }
     });
 </script>
-<?php
-include('../componen/footer.php')
-?>

@@ -165,3 +165,8 @@ table {
 .overlay a:hover {
     background-color: #03a238;
 }
+
+.action-delete a {
+    text-decoration: none;
+    color: white;
+}

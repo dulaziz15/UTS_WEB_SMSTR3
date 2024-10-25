@@ -4,21 +4,34 @@ include('../componen/header.php');
 <main class="main-content">
     <div class="card-table">
         <h2 class="title-content">Update Destinasi</h2>
-    <form action="../../routes/route.php?action=updateDestinasi&id=<?= $_GET['id'] ?>" method="post" enctype="multipart/form-data">
-        Nama
-        <input type="text" name="nama" id="nama"><br>
-        Daerah
-        <input type="text" name="daerah" id="daerah"><br>
-        Gambar
-        <input type="file" name="img" id="img"><br>
-        <input type="submit" value="Tambah">
-    </form>
+        <form action="../../routes/route.php?action=updateDestinasi&id=<?= $_GET['id'] ?>" method="post" enctype="multipart/form-data" class="form">
+            <div class="form-container">
+                <div class="form-input">
+                    <label for="nama">Nama Destinasi</label>
+                    <input type="text" name="nama" id="nama">
+                </div>
+                <div class="form-input">
+                    <label for="daerah">Daerah</label>
+                    <input type="text" name="daerah" id="daerah">
+                </div>
+                <div class="form-input">
+                    <label for="img">Gambar</label>
+                    <input type="file" name="img" id="img">
+                </div>
+            </div>
+            <div class="form-input-submit">
+                <input type="submit" value="Tambah" name="Tambah" id="submit">
+            </div>
+        </form>
     </div>
-    </main>
+</main>
+<?php
+include('../componen/footer.php');
+?>
 <script>
     $.ajax({
         type: 'GET',
-        url: '/PRAKTIKUM%20DESAIN%20DASAR%20PEMROGRAMAN%20WEB/UTS/routes/route.php?action=getDestinasi&id=<?=$_GET['id']?>', // Ensure this path is correct
+        url: '/PRAKTIKUM%20DESAIN%20DASAR%20PEMROGRAMAN%20WEB/UTS/routes/route.php?action=getDestinasi&id=<?= $_GET['id'] ?>',
         success: function(data) {
             $('#nama').val(data.nama_destinasi);
             $('#daerah').val(data.daerah);
@@ -29,6 +42,3 @@ include('../componen/header.php');
         }
     });
 </script>
-<?php
-    include('../componen/footer.php');
-?>

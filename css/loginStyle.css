@@ -35,6 +35,16 @@ body {
   color: white;
 }
 
+.login-container .sukses{
+  display: flex;
+  justify-content: center;
+  background-color: rgb(7, 207, 0);
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  color: white;
+}
+
 
 h2{
   text-align: center;
@@ -45,12 +55,16 @@ h2{
   margin-bottom: 15px;
 }
 
+.register {
+  margin-top: -40px;
+}
+
 label{
   display: block;
   margin-bottom: 5px;
 }
 
-input{
+input, select{
   width: 100%;
   padding: 10px;
   border: 1px solid #ddd;
@@ -71,57 +85,3 @@ input{
   background-color: #8fccd9;
 }
 
-
-@media (max-width: 768px) {
-  body {
-    padding: 10px;
-  }
-
-  .login-container {
-    padding: 15px;
-  }
-
-  input {
-    padding: 8px;
-  }
-  
-  #submit {
-    padding: 8px;
-  }
-}
-
-
-@media (max-width: 480px) {
-  h2 {
-    font-size: 1.5rem;
-  }
-
-  input {
-    padding: 6px;
-  }
-
-  #submit {
-    padding: 8px;
-    font-size: 0.9rem;
-  }
-}
-
-@media (max-width: 320px) {
-  .login-container {
-    padding: 10px;
-  }
-
-  h2 {
-    font-size: 1.2rem;
-  }
-
-  input {
-    padding: 5px;
-    font-size: 0.85rem;
-  }
-
-  #submit {
-    padding: 7px;
-    font-size: 0.85rem;
-  }
-}

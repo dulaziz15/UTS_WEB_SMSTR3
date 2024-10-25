@@ -79,15 +79,15 @@
                         <td>
                             ${
                             pesanan.status == 3 ? 
-                            '<button class=""><a onclick="false">Status telah Selesai !</a></button>' : 
-                            '<button class=""><a onclick="false">Selesaikan Untuk Hapus !</a></button></td>'
+                            '<button class="keterangan"><a onclick="false">Status telah Selesai !</a></button>' : 
+                            '<button class="keterangan"><a onclick="false">Selesaikan Untuk Hapus !</a></button></td>'
                             }
                         </td>
                         <td>
                             ${
                             pesanan.status == 3 ? 
-                            '<button class=""><a href="routes/route.php?action=deletePesananUser&id=' + pesanan.pesanan_id + '">Hapus</a></button>' : 
-                            '<button class="" onClick="updatePesanan(' + pesanan.pesanan_id + ')"><a>Edit</a></button>'
+                            '<button class="action-delete"><a href="routes/route.php?action=deletePesananUser&id=' + pesanan.pesanan_id + '">Hapus</a></button>' : 
+                            '<button class="action-edit" onClick="updatePesanan(' + pesanan.pesanan_id + ')"><a>Edit</a></button>'
                             }
                         </td>
                         </tr>

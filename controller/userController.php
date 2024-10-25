@@ -28,6 +28,27 @@ class UserController
         }
     }
 
+    public function register()
+    {
+        // cek uniq email
+        $validate = $this->user->validate_email();
+        if ($validate == true) {
+            // jika uniq
+            $tambah = $this->user->tambahUser();
+            // jika data berhasil ditambahkan
+            if ($tambah == true) {
+                $_SESSION['sukses'] = "Anda berhasil register";
+                header("Location:../view/login.php");
+            } else {
+                $_SESSION['error'] = "Anda gagal register";
+                header("Location:../view/register.php");
+            }
+        } else {
+            // jika email duplikat
+            header("Location:../view/register.php");
+        }
+    }
+
     public function dashboard() {
         header("Location:../data_master/dashboard/index.php");
     }
