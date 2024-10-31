@@ -53,6 +53,7 @@ class User
         $query = "SELECT * FROM dbo.users where email = '" . $email . "'";
         $data = $this->koneksi->koneksi()->query($query);
         $result = $data->fetchAll();
+        // var_dump($result);
         if (empty($result)) {
             $queryusername = "SELECT * FROM dbo.users where username = '" . $username . "'";
             $datausername = $this->koneksi->koneksi()->query($queryusername);

@@ -58,7 +58,7 @@
                 <input type="submit" value="Register" name="submit" id="submit">
             </div>
             <div class="input-group register">
-                <p>Sudah memiliki akun ? <a href="register.php">Login</a></p>
+                <p>Sudah memiliki akun ? <a href="login.php">Login</a></p>
             </div>
         </form>
     </div>
